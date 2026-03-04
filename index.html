@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Track Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="screen-menu" class="screen active">
+        <div class="menu-card">
+            <h1>Car Track Builder</h1>
+            <p>Vyberte velikost mapy:</p>
+            <select id="size-select">
+                <option value="20">Malá (20x20)</option>
+                <option value="50">Střední (50x50)</option>
+                <option value="100">Velká (100x100)</option>
+            </select>
+            <br>
+            <button onclick="startNewMap()">Nová mapa</button>
+            <button id="btn-load-menu">Načíst mapu</button>
+        </div>
+    </div>
+
+    <div id="screen-editor" class="screen">
+        <div class="editor-container">
+            <div class="sidebar">
+                <h2>Nástroje</h2>
+                
+                <div class="tool active" data-type="road">
+                    <div class="tool-preview" style="background: #333"></div>
+                    Silnice
+                </div>
+                <div class="tool" data-type="grass">
+                    <div class="tool-preview" style="background: #2ecc71"></div>
+                    Tráva
+                </div>
+                <div class="tool" data-type="wall">
+                    <div class="tool-preview" style="background: #e74c3c"></div>
+                    Barikáda
+                </div>
+                <div class="tool" data-type="goal">
+                    <div class="tool-preview" style="background: #ecf0f1"></div>
+                    Cíl
+                </div>
+
+                <hr style="width:100%; opacity:0.2">
+                
+                <button id="btn-save">Uložit do prohlížeče</button>
+                <button id="btn-exit" style="background: #7f8c8d">Zpět do menu</button>
+            </div>
+
+            <div class="viewport">
+                <div id="grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+:root {
+    --bg-color: #1a1a1a;
+    --panel-color: #2d2d2d;
+    --text-color: #eee;
+    --accent-color: #3498db;
+    --color-grass: #2ecc71;
+    --color-road: #333;
+    --color-wall: #e74c3c;
+    --color-goal: #ecf0f1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+}
+
+
+.screen {
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen.active { display: flex; }
+
+
+.menu-card {
+    background: var(--panel-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+select, button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button { background: var(--accent-color); color: white; transition: 0.2s; }
+button:hover { opacity: 0.8; transform: translateY(-2px); }
+
+
+.editor-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background: var(--panel-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.viewport {
+    flex-grow: 1;
+    overflow: auto;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+
+#grid {
+    display: grid;
+    background: #444;
+    gap: 1px;
+    box-shadow: 0 0 50px rgba(0,0,0,0.5);
+    user-select: none;
+}
+
+.tile {
+    width: 25px;
+    height: 25px;
+}
+
+
+.tile.grass { background-color: var(--color-grass); }
+.tile.road { background-color: var(--color-road); }
+.tile.wall { background-color: var(--color-wall); }
+.tile.goal { background-color: var(--color-goal); }
+
+
+.tool {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: #3d3d3d;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.tool:hover { background: #4a4a4a; }
+.tool.active { border-color: var(--accent-color); background: #444; }
+.tool-preview { width: 18px; height: 18px; border-radius: 2px; }
